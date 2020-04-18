@@ -5,7 +5,13 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.render('index');
+    let nome = 'Guilherme';
+    let lang = 'JS';
+    res.render('index', {
+        nome,
+        lang,
+        empresa: 'ABC71'
+    });
 });
 
 app.get('/home', (req, res) => {
@@ -15,7 +21,6 @@ app.get('/home', (req, res) => {
 app.get('/profile', (req, res) => {
     res.render('principal/profile');
 });
-
 
 app.listen(3333, () => { 
     console.log("Server iniciado");
