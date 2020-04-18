@@ -8,11 +8,19 @@ app.get('/:nome/:lang', (req, res) => {
     let nome = req.params.nome;
     let lang = req.params.lang;
     let msg = true;
+
+    let produtos = [
+        {nome: 'doritos', preco: 1.14},
+        {nome: 'coca', preco: 5},
+        {nome: 'alface', preco: 0.50}
+    ]
+    
     res.render('index', {
         nome,
         lang,
         empresa: 'ABC71',
-        msg
+        msg,
+        produtos
     });
 });
 

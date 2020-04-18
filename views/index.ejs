@@ -18,5 +18,9 @@
     <%} else {%>
         <h3>Sem Erro!</h3>
     <%}%>
+
+    <% produtos.map(p => { %>
+        <p>Nome: <%= p.nome %> e Preço: <%= p.preco %></p>
+    <% }) %>
 </body>
 </html>
