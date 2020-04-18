@@ -3,6 +3,7 @@ const app = express();
 
 //dizendo p/ o express usar o EJS como view engine
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 app.get('/:nome/:lang', (req, res) => {
     let nome = req.params.nome;
