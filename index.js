@@ -8,6 +8,15 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/home', (req, res) => {
+    res.render('home');
+});
+
+app.get('/profile', (req, res) => {
+    res.render('principal/profile');
+});
+
+
 app.listen(3333, () => { 
     console.log("Server iniciado");
 });
