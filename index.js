@@ -7,10 +7,12 @@ app.set('view engine', 'ejs');
 app.get('/:nome/:lang', (req, res) => {
     let nome = req.params.nome;
     let lang = req.params.lang;
+    let msg = false;
     res.render('index', {
         nome,
         lang,
-        empresa: 'ABC71'
+        empresa: 'ABC71',
+        msg
     });
 });
 
