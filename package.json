@@ -1,0 +1,19 @@
+{
+  "name": "asking",
+  "version": "1.0.0",
+  "description": "Asking & Questions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guimattos1249/asking.git"
+  },
+  "author": "Guilherme Mattos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guimattos1249/asking/issues"
+  },
+  "homepage": "https://github.com/guimattos1249/asking#readme"
+}
