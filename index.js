@@ -4,9 +4,9 @@ const app = express();
 //dizendo p/ o express usar o EJS como view engine
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    let nome = 'Guilherme';
-    let lang = 'JS';
+app.get('/:nome/:lang', (req, res) => {
+    let nome = req.params.nome;
+    let lang = req.params.lang;
     res.render('index', {
         nome,
         lang,
