@@ -1,0 +1,12 @@
+body {
+    background-color: #eceff1;
+}
+
+#form-ask {
+    margin-top: 5vh;
+    /* vh é altura da tela */
+}
+
+#title-logo {
+    margin-left: 5px;
+}
