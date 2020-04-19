@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./database/database');
+const questionModel = require('./database/Question');
 
 connection
     .authenticate()
     .then(() => {
-        console.log('conexão feita com sucesso');
+        console.log('conexão com o banco de dados feita com sucesso');
     })
     .catch((msg) => {
         console.log(msg);
@@ -27,7 +28,7 @@ app.get('/ask', (req, res) => {
     res.render('ask');
 });
 
-app.post('/salvarpergunta', (req, res) => {
+app.post('/saveask', (req, res) => {
     var title = req.body.title;
     var description = req.body.description;
     res.send(`Titulo:${title} Descricao: ${description}`);
