@@ -4,8 +4,25 @@
     <div class="container">
         <br>
         <h1><%= question.title %></h1>
-        <hr>
         <p><%= question.description %></p>
+        <hr>
+        <form method="POST" action="/awnser">
+            <h3>Responda</h3>
+            <textarea name="body" id="" placeholder="Digite sua Resposta" class="form-control"></textarea>
+            <input type="hidden" name="question" value="<%= question.id %>">
+            <br><button type="submit" class="btn btn-primary">Responder</button>
+        </form>
+        <hr>
+        <h3>Respostas</h3>
+        <hr>
+        <% awnsers.map(awnser => { %>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <p><%= awnser.body %></p>
+                </div>
+            </div>
+        <% }) %>
     </div>
 </body>
 <%- include ('partials/footer.ejs') %>

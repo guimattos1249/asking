@@ -41,9 +41,17 @@ app.get('/question/:id', (req, res) => {
         where: {id}
     }).then(question => {
         if(question != undefined) {
-            res.render('question', {
-                question
-            });
+            Awnser.findAll({
+                where: {questionId: question.id},
+                order: [
+                    ['id', 'DESC']
+                ]
+            }).then(awnsers => {
+                res.render('question', {
+                    question,
+                    awnsers
+                });
+            });           
         } else {
             res.redirect('/');
         }
@@ -59,6 +67,18 @@ app.post('/saveask', (req, res) => {
         description
     }).then(() => {
         res.redirect('/');
+    });
+});
+
+app.post('/awnser', (req, res) => {
+    var body = req.body.body;
+    var questionId = req.body.question;
+
+    Awnser.create({
+        body,
+        questionId
+    }).then(() => {
+        res.redirect(`/question/${questionId}`);
     });
 });
 
